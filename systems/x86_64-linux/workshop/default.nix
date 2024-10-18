@@ -42,7 +42,7 @@ in
     };
 
     user = {
-      name = "nixos";
+      name = "csanthiago";
     };
   };
 

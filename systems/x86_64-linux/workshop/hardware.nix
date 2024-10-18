@@ -7,7 +7,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = "nixos";
+    defaultUser = "csanthiago";
     startMenuLaunchers = true;
 
     wslConf = {
