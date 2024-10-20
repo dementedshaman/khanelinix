@@ -30,30 +30,10 @@ in
         tools = {
           git = {
             enable = true;
-            wslAgentBridge = true;
-            wslGitCredentialManagerPath = ''/mnt/c/Users/Austin.Horstman/AppData/Local/Programs/Git/mingw64/bin/git-credential-manager.exe'';
-            includes = [
-              {
-                condition = "gitdir:/mnt/c/";
-                path = "${./git/windows-compat-config}";
-              }
-              {
-                condition = "gitdir:/mnt/c/source/repos/DiB/";
-                path = "${./git/dib-signing}";
-              }
-            ];
           };
 
           ssh = enabled;
         };
-      };
-    };
-
-    services = {
-      sops = {
-        enable = true;
-        defaultSopsFile = lib.snowfall.fs.get-file "secrets/CORE/nixos/default.yaml";
-        sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
       };
     };
 
